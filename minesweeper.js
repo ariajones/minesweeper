@@ -4,20 +4,27 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 var board = {
     cells: [ 
+      {row: 0, col: 0, isMine: true/*,  isMarked: false, hidden: true, surroundingMines: 0*/}, 
+      {row: 1, col: 0, isMine: 0, hidden: 0}, 
+      {row: 2, col: 0, isMine: 0, hidden: 0},
+      {row: 0, col: 1, isMine: 0, hidden: 0}, 
       {row: 1, col: 1, isMine: 0, hidden: 0}, 
-      {row: 2, col: 1, isMine: 0, hidden: 0}, 
-      {row: 3, col: 1, isMine: 0, hidden: 0},
+      {row: 2, col: 1, isMine: 0, hidden: 0},
+      {row: 0, col: 2, isMine: 0, hidden: 0}, 
       {row: 1, col: 2, isMine: 0, hidden: 0}, 
-      {row: 2, col: 2, isMine: 0, hidden: 0}, 
-      {row: 3, col: 2, isMine: 0, hidden: 0},
-      {row: 1, col: 3, isMine: 0, hidden: 0}, 
-      {row: 2, col: 3, isMine: 0, hidden: 0}, 
-      {row: 3, col: 3, isMine: 0, hidden: 0},   
+      {row: 2, col: 2, isMine: 0, hidden: 0},   
     ]
 }
 
 function startGame () {
-  // Don't remove this function call: it makes the game work!
+  
+      for (i = 0; i < board.cells.length; i++)
+
+        countSurroundingMines(board.cells[i]) = board.cells[i].surroundingMines
+      
+    // Don't remove this function call: it makes the game work!
+
+
   lib.initBoard()
 }
 
