@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', startGame)
 var board = {
     cells: [ 
       {row: 0, col: 0, isMine: true, hidden: 0,/*,  isMarked: false, */}, 
-      {row: 1, col: 0, isMine: 0, hidden: 0}, 
-      {row: 2, col: 0, isMine: 0, hidden: 0},
-      {row: 0, col: 1, isMine: 0, hidden: 0}, 
-      {row: 1, col: 1, isMine: 0, hidden: 0}, 
-      {row: 2, col: 1, isMine: 0, hidden: 0},
-      {row: 0, col: 2, isMine: 0, hidden: 0}, 
-      {row: 1, col: 2, isMine: 0, hidden: 0}, 
-      {row: 2, col: 2, isMine: 0, hidden: 0},   
+      {row: 1, col: 0, isMine: false, hidden: 0}, 
+      {row: 2, col: 0, isMine: true, hidden: 0},
+      {row: 0, col: 1, isMine: false, hidden: 0}, 
+      {row: 1, col: 1, isMine: false, hidden: 0}, 
+      {row: 2, col: 1, isMine: false, hidden: 0},
+      {row: 0, col: 2, isMine: true, hidden: 0}, 
+      {row: 1, col: 2, isMine: true, hidden: 0}, 
+      {row: 2, col: 2, isMine: false, hidden: 0},   
     ]
 }
 
@@ -54,7 +54,7 @@ function countSurroundingMines (cell) {
 
   for (i = 0; i < surrounding.length; i++) {
 
-   if (board.cells.isMine == true) {count += 1} 
+   if (cell.isMine = true) count += 1;
 
   }
 
