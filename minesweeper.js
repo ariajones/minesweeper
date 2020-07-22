@@ -24,6 +24,7 @@ var board = {
 
   document.addEventListener('click', checkForWin)
   document.addEventListener('contextmenu', checkForWin)
+
     // Don't remove this function call: it makes the game work!
 
 
@@ -35,6 +36,13 @@ var board = {
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
 function checkForWin () {
+
+  for (i = 0; i < board.cells.length; i++) {
+
+    board.cells.forEach(if (.isMine === true) && (.isMarked !=== true) => {
+      
+    });
+
 
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
