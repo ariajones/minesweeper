@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 var board = {
     cells: [ 
-      {row: 0, col: 0, isMine: true, hidden: 0,/*,  isMarked: false, */}, 
+      {row: 0, col: 0, isMine: true, hidden: 0}, 
       {row: 1, col: 0, isMine: false, hidden: 0}, 
-      {row: 2, col: 0, isMine: true, hidden: 0},
+      {row: 2, col: 0, isMine: false, hidden: 0},
       {row: 0, col: 1, isMine: false, hidden: 0}, 
       {row: 1, col: 1, isMine: false, hidden: 0}, 
       {row: 2, col: 1, isMine: false, hidden: 0},
@@ -52,15 +52,13 @@ function countSurroundingMines (cell) {
   var surrounding = lib.getSurroundingCells(cell.row, cell.col);
   var count = 0;
 
-  for (i = 0; i < surrounding.length; i++) {
+  for (i = 0; i <= 8; i++) {
 
-   if (cell.isMine = true) count += 1;
+   if (cell.isMine = true) count += 1 ;
 
   }
 
   return count
-
-  //returns the number of cells around the current cell that have the isMine property set to true.
  
 }
 
