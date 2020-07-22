@@ -4,15 +4,15 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 var board = {
     cells: [ 
-      {row: 0, col: 0, isMine: true, hidden: true}, 
-      {row: 1, col: 0, isMine: false, hidden: true}, 
-      {row: 2, col: 0, isMine: false, hidden: true},
-      {row: 0, col: 1, isMine: false, hidden: true}, 
-      {row: 1, col: 1, isMine: false, hidden: true}, 
-      {row: 2, col: 1, isMine: true, hidden: true},
-      {row: 0, col: 2, isMine: true, hidden: true}, 
-      {row: 1, col: 2, isMine: true, hidden: true}, 
-      {row: 2, col: 2, isMine: false, hidden: true},   
+      {row: 0, col: 0, isMine: true, hidden: true, isMarked: false}, 
+      {row: 1, col: 0, isMine: false, hidden: true, isMarked: false}, 
+      {row: 2, col: 0, isMine: false, hidden: true, isMarked: false},
+      {row: 0, col: 1, isMine: false, hidden: true, isMarked: false}, 
+      {row: 1, col: 1, isMine: false, hidden: true, isMarked: false}, 
+      {row: 2, col: 1, isMine: true, hidden: true, isMarked: false},
+      {row: 0, col: 2, isMine: true, hidden: true, isMarked: false}, 
+      {row: 1, col: 2, isMine: true, hidden: true, isMarked: false}, 
+      {row: 2, col: 2, isMine: false, hidden: true, isMarked: false},   
       ]}
       
     function startGame () {
@@ -21,6 +21,9 @@ var board = {
 
     board.cells[i].surroundingMines = countSurroundingMines(board.cells[i])
     }     
+
+  document.addEventListener('click', checkForWin)
+  document.addEventListener('contextmenu', checkForWin)
     // Don't remove this function call: it makes the game work!
 
 
@@ -51,13 +54,10 @@ function countSurroundingMines (cell) {
   var surrounding = lib.getSurroundingCells(cell.row, cell.col);
   var count = 0;
 
-  for (i = 0; i <= 8; i++) {
+  for (var i = 0; i < surrounding.length; i++) {
 
-   if (cell.isMine = true) count += 1 ;
-
-  }
-
-  return count
- 
+   if (surrounding[i].isMine === true) count += 1;
+}
+  return count;
 }
 
